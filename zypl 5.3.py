@@ -1,0 +1,15 @@
+'''numbers = (2, 1, 3, 4, 7)
+print(numbers)
+lst = list(numbers)
+print(lst)
+lst.append(88)
+lst = list(lst)
+print(lst)
+numbers = tuple(lst)
+print(numbers)
+print(numbers.index(7))
+'''
+t = tuple(range(1, 21))
+print(t)
+c = t[1::2]
+print(c)
