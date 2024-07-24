@@ -56,12 +56,31 @@ if n > 99:
     b = n // 10 % 10
     c = n % 10
     res = s[a]
-    if b > 1 or c and b != 1:
+    if b > 1 or (c and b != 1):
         res += 'у '
         res += d[b]
         if len(y[c]) and len(d[b]):
-            res += 'у '
+            if res[-1] not in g:
+                res += 'у '
+            else :
+                res += 'ву '
         res += y[c]
-    else :
+    elif n % 100 < 20 and n % 100 > 0:
         res += 'у ' + dd[n % 100]
-    print(res)
+    print(res if res != 'як сад' else res[res.index(' ') + 1:])
+
+elif n < 100 and n > 9:
+    if n < 20:
+        print(dd[n])
+    else :
+        res = d[n // 10]
+        if n % 10:
+            if res[-1] in g:
+                res += 'ву '
+            else :
+                res += 'у'
+            res += y[n % 10]
+        print(res)
+
+elif n < 10:
+    print(y[n])
